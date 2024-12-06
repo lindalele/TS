@@ -1,0 +1,48 @@
+; 设计模式：在面向对象软件设计过程中针对特定问题的简介而优雅的解决方案
+; 一般是《设计模式：可复用面向对象软件的基础》一书中提到的23种常见的软件开发设计模式
+常见的7种：
+1. 单例模式（Singleton Pattern）
+2. 工厂模式（Factory Pattern）
+3. 原型模式（Prototype Pattern）
+4. 建造者模式（Builder Pattern）
+5. 适配器模式（Adapter Pattern）
+6. 装饰者模式（Decorator Pattern）
+7. 策略模式（Strategy Pattern）
+
+工厂模式：表现形式：调用即可返回新对象的函数
+function FoodFactory(name,color) {
+    return {name,color}
+}
+const f1=FoodFactory('apple','red')
+
+; 全局API应用实例
+Vue.component('button-counter',{
+    data:()=>({count:0}),
+    template:`<button @click="count++">Clicked{{count}}</button>`
+})
+; 在vue3中有了一个新的全局API：createApp
+调用createApp返回一个应用实例，使用的是工厂模式
+vue3好处：1.避免在测试期间，全局配置污染其他测试用例
+2.全局改变vue实例的行为，移动到vue的实例上。
+就是说有了实例，就不会污染全局环境了，使得每一个应用都有自己的配置成为可能
+vue2全局API：Vue.config 、Vue.component、Vue.directive
+
+vue3全局API：app.config、app.component、app.directive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
